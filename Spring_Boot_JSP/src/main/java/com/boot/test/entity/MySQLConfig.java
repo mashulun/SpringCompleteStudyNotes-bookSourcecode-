@@ -1,7 +1,6 @@
 package com.boot.test.entity;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * @author msl
@@ -13,13 +12,12 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "spring.datasource")
 public class MySQLConfig {
 
-
     private String url;
 
 
-    private String userName;
+    private String username;
 
-    private String passWord;
+    private String password;
 
     private String driverClassName;
 
@@ -32,20 +30,20 @@ public class MySQLConfig {
         this.url = url;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getDriverClassName() {
@@ -54,5 +52,15 @@ public class MySQLConfig {
 
     public void setDriverClassName(String driverClassName) {
         this.driverClassName = driverClassName;
+    }
+
+    @Override
+    public String toString() {
+        return "MySQLConfig{" +
+                "url='" + url + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", driverClassName='" + driverClassName + '\'' +
+                '}';
     }
 }

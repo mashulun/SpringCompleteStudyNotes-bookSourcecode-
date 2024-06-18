@@ -1,10 +1,13 @@
 package com.boot.test;
 
+import com.boot.test.entity.MySQLConfig;
+import com.boot.test.properties.MyConfig;
 import com.boot.test.servlet.MyServlet1;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
@@ -21,6 +24,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  */
 @ServletComponentScan // 方式二： 添加servlet 注册扫描，将自动注册添加了@WebServlet的类为serlvet
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+//@EnableConfigurationProperties({MyConfig.class})
 public class App {
 
     public static void main(String[] args) {
@@ -33,9 +37,9 @@ public class App {
      * 这种方式已经在springboot中废弃
      * @ return
      */
-    public ServletRegistrationBean registrationBean1(){
-        return new ServletRegistrationBean(new MyServlet1(),"/myServlet");
-    }
+    //public ServletRegistrationBean registrationBean1(){
+    //    return new ServletRegistrationBean(new MyServlet1(),"/myServlet");
+    //}
 
 
 }
